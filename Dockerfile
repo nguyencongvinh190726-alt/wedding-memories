@@ -30,8 +30,9 @@ RUN composer install \
     --no-interaction \
     --no-scripts
 
-RUN chmod -R 775 storage bootstrap/cache
+RUN mkdir -p storage/app/public bootstrap/cache \
+    && chmod -R 775 storage bootstrap/cache
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "php -S 0.0.0.0:${PORT} -t public"]
+CMD ["sh", "-c", "php artisan migrate --force && php artisan storage:link --force && php -S 0.0.0.0:${PORT} -t public"]
