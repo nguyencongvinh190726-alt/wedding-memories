@@ -2,12 +2,4 @@
 builder = "DOCKERFILE"
 
 [deploy]
-startCommand = "php artisan serve --host=0.0.0.0 --port=$PORT"[build]
-builder = "RAILPACK"
-
-[deploy]
 startCommand = "php artisan serve --host=0.0.0.0 --port=$PORT"
-nano Dockerfile
-exit
-
-
