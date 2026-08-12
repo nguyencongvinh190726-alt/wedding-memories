@@ -257,7 +257,7 @@
 
         <section class="section gallery-section" id="moments">
             <div class="inner"><div class="section-head reveal"><div class="section-kicker">Captured moments</div><h2 class="section-title">A little album of <em>us.</em></h2><p class="intro">Những khung hình chân thật nhất, được lưu giữ để mỗi lần nhìn lại, chúng mình vẫn thấy ngày hôm ấy thật gần.</p></div>
-                @if ($photos->count())<div class="gallery reveal">@foreach ($photos as $photo)<article class="gallery-card" role="button" tabindex="0" data-photo-index="{{ $loop->index }}" aria-label="Xem ảnh {{ $loop->iteration }}"><img src="{{ asset('storage/' . $photo->image) }}" alt="{{ $photo->title ?? 'Wedding memory ' . $loop->iteration }}" loading="lazy"><div class="gallery-meta"><span>{{ $photo->title ?? 'Our memory' }}</span><span class="gallery-index">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span></div></article>@endforeach</div>@else<div class="empty-gallery">Những kỷ niệm đẹp sẽ sớm xuất hiện ở đây.</div>@endif
+                @if ($photos->count())<div class="gallery">@foreach ($photos as $photo)<article class="gallery-card" role="button" tabindex="0" data-photo-index="{{ $loop->index }}" aria-label="Xem ảnh {{ $loop->iteration }}"><img src="{{ asset('storage/' . $photo->image) }}" alt="{{ $photo->title ?? 'Wedding memory ' . $loop->iteration }}" decoding="async"><div class="gallery-meta"><span>{{ $photo->title ?? 'Our memory' }}</span><span class="gallery-index">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span></div></article>@endforeach</div>@else<div class="empty-gallery">Những kỷ niệm đẹp sẽ sớm xuất hiện ở đây.</div>@endif
             </div>
         </section>
     </main>
