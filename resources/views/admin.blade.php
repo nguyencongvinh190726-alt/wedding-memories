@@ -267,7 +267,7 @@
 <div class="container">
 
     <a
-        href="{{ route('home') }}"
+        href="{{ route('home', [], false) }}"
         class="back"
     >
         ← Xem Wedding Memories
@@ -327,7 +327,7 @@
 
 
         <form
-            action="{{ route('admin.wedding.update') }}"
+            action="{{ route('admin.wedding.update', [], false) }}"
             method="POST"
         >
 
@@ -411,7 +411,7 @@
 
 
         <form
-            action="{{ route('admin.photos.upload') }}"
+            action="{{ route('admin.photos.upload', [], false) }}"
             method="POST"
             enctype="multipart/form-data"
         >
@@ -489,7 +489,7 @@
                             <!-- SET COVER -->
 
                             <form
-                                action="{{ route('admin.photos.cover', $photo) }}"
+                                action="{{ route('admin.photos.cover', [$photo], false) }}"
                                 method="POST"
                                 class="cover-form"
                             >
@@ -523,7 +523,7 @@
                             <!-- DELETE -->
 
                             <form
-                                action="{{ route('admin.photos.delete', $photo) }}"
+                                action="{{ route('admin.photos.delete', [$photo], false) }}"
                                 method="POST"
                                 class="delete-form"
                             >
